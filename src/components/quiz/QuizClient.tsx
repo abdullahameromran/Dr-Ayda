@@ -112,7 +112,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
       <CardHeader>
         <div className="flex items-center justify-center mb-2">
           <HeartPulse className="h-8 w-8 text-primary mr-2" />
-          <CardTitle className="font-headline text-2xl text-center">AMKE Pregnancy Quiz</CardTitle>
+          <CardTitle className="font-headline text-2xl text-center">Dr. Ayda Pregnancy Quiz</CardTitle>
         </div>
         <Progress value={progressValue} className="w-full my-2 h-2" />
         <CardDescription className="text-center font-body">
