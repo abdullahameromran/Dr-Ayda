@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Dr. Ayda Pregnancy Quiz',
+  title: 'Professor: Aida Pregnancy Quiz',
   description: 'Test your knowledge about pregnancy and healthcare.',
 };
 
