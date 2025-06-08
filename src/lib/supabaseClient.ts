@@ -1,4 +1,30 @@
 
+// ======================================================================
+// IMPORTANT: SUPABASE API KEYS CONFIGURATION
+//
+// This application requires Supabase API keys to be configured as
+// environment variables. The keys you provide (like anon public key
+// and service role secret key) MUST be set in your environment:
+//
+// 1. NEXT_PUBLIC_SUPABASE_URL: Your Supabase project URL
+//    (e.g., https://your-project-ref.supabase.co)
+//
+// 2. NEXT_PUBLIC_SUPABASE_ANON_KEY: Your Supabase anon (public) key.
+//    This key is safe for client-side use if RLS is enabled.
+//
+// 3. SUPABASE_SERVICE_ROLE_KEY: Your Supabase service_role (secret) key.
+//    This key bypasses RLS and MUST BE KEPT SECRET.
+//    It should only be used in server-side environments.
+//
+// How to set them:
+// - Locally: Create a `.env.local` file in your project root.
+// - Deployment (e.g., Firebase Studio/IDX, Vercel, Netlify):
+//   Use your hosting platform's environment variable settings.
+//
+// REMEMBER TO RESTART YOUR DEVELOPMENT SERVER AFTER CHANGING .env.local
+// OR AFTER UPDATING PLATFORM ENVIRONMENT VARIABLES.
+// ======================================================================
+
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from '@/types/supabase';
 
@@ -33,6 +59,8 @@ if (!foundNextPublicSupabaseAnonKey) {
 
 console.log("Attempting to access SUPABASE_SERVICE_ROLE_KEY (should be secret):");
 console.log(`  SUPABASE_SERVICE_ROLE_KEY: '${process.env.SUPABASE_SERVICE_ROLE_KEY ? "******** (present)" : "undefined (MISSING!)"}'`);
+console.log("Note: NEXT_PUBLIC_ variables are available client-side (embedded at build time) and server-side (read from runtime env).");
+console.log("Non-prefixed variables (like SUPABASE_SERVICE_ROLE_KEY) are only available server-side if set in the runtime env.");
 console.log("==========================================================");
 // End of diagnostic log block
 // ==========================================================
@@ -59,15 +87,15 @@ if (!supabaseUrl) {
   throw new Error(
     "CRITICAL CONFIGURATION ERROR: Environment variable NEXT_PUBLIC_SUPABASE_URL is missing or undefined. \n\n" +
     "This variable is ESSENTIAL for connecting to your Supabase database. \n\n" +
+    "ATTENTION FIREBASE STUDIO (IDX) / CLOUD PLATFORM USERS: Your platform's environment variable settings (see Step 1 below) often override or replace local '.env.local' files. PLEASE CHECK YOUR PLATFORM'S CONFIGURATION FIRST.\n\n" +
     "Troubleshooting Steps: \n" +
-    "1. Verify '.env.local': Ensure a file named '.env.local' exists in the ROOT of your project. \n" +
-    "   It MUST contain: NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co \n" +
-    "   (Replace 'your-project-ref' with 'ywbhdhptvmulflrhhavcs' for your project). \n" +
-    "2. Restart Server: After creating or modifying '.env.local', YOU MUST RESTART your Next.js development server (e.g., stop 'npm run dev' and run it again). \n" +
-    "3. Firebase Studio / IDX Environment (HIGHLY IMPORTANT): If you are using a platform like Firebase Studio (IDX), environment variables are often managed through the platform's specific UI or configuration files, NOT JUST '.env.local'. These platform settings can override or ignore local files. **CONSULT THE FIREBASE STUDIO (IDX) DOCUMENTATION for setting server-side/runtime environment variables.** \n" +
-    "4. Console Logs: Check your SERVER CONSOLE (where 'npm run dev' output appears) for the detailed 'Supabase Client Initialization - Environment Check' logs above this error. If NEXT_PUBLIC_SUPABASE_URL shows 'undefined (MISSING!)' or the value read is 'undefined', the variable is not reaching the Next.js server process. \n" +
+    "1. Firebase Studio / IDX / Cloud Platform Environment (MOST LIKELY CAUSE IN HOSTED ENVIRONMENTS): If you are using a platform like Firebase Studio (IDX), Vercel, Netlify, etc., ensure environment variables are correctly set within that platform's specific UI or configuration files. **CONSULT YOUR PLATFORM'S DOCUMENTATION for setting server-side/runtime environment variables.** These settings are often the source of truth and may ignore local `.env.local` files. \n" +
+    "2. Verify '.env.local' (Primarily for Local Development, MAY BE IGNORED BY YOUR PLATFORM): Ensure a file named '.env.local' exists in the ROOT of your project. \n" +
+    "   It MUST contain: NEXT_PUBLIC_SUPABASE_URL=https://ywbhdhptvmulflrhhavcs.supabase.co \n" +
+    "3. Restart Server/Redeploy: After creating or modifying '.env.local' OR platform settings, YOU MUST RESTART your Next.js development server (e.g., stop 'npm run dev' and run it again) or redeploy your application. \n" +
+    "4. Console Logs: Check your SERVER CONSOLE (where 'npm run dev' output or platform logs appear) for the detailed 'Supabase Client Initialization - Environment Check' logs. If NEXT_PUBLIC_SUPABASE_URL shows 'undefined (MISSING!)' or the value read is 'undefined', the variable is not reaching the Next.js server process. \n" +
     "5. Typos: Double-check for typos in the variable name in '.env.local' or your platform's settings (it must be EXACTLY 'NEXT_PUBLIC_SUPABASE_URL'). \n\n" +
-    "If the problem persists after checking platform-specific settings (Step 3), the variable is not being correctly supplied to your Next.js application's environment by your development/hosting platform."
+    "If this problem persists after thoroughly checking platform-specific settings (especially Step 1), the `NEXT_PUBLIC_SUPABASE_URL` variable is definitively not being supplied to your Next.js application's environment by your development/hosting platform. **This is an EXTERNAL CONFIGURATION ISSUE that you MUST resolve at the platform level.** Application code changes cannot fix a missing environment variable."
   );
 }
 
@@ -75,12 +103,14 @@ if (!supabaseAnonKey) {
   throw new Error(
     "CRITICAL CONFIGURATION ERROR: Environment variable NEXT_PUBLIC_SUPABASE_ANON_KEY is missing or undefined. \n\n" +
     "This variable is ESSENTIAL for client-side Supabase authentication. \n\n" +
-    "Troubleshooting Steps (similar to above, focusing on NEXT_PUBLIC_SUPABASE_ANON_KEY): \n" +
-    "1. Verify '.env.local': Ensure '.env.local' in your project ROOT contains: \n" +
+    "ATTENTION FIREBASE STUDIO (IDX) / CLOUD PLATFORM USERS: Your platform's environment variable settings (see Step 1 below) often override or replace local '.env.local' files. PLEASE CHECK YOUR PLATFORM'S CONFIGURATION FIRST.\n\n" +
+    "Troubleshooting Steps: \n" +
+    "1. Firebase Studio / IDX / Cloud Platform Environment (MOST LIKELY CAUSE IN HOSTED ENVIRONMENTS): If using Firebase Studio (IDX) or similar, check platform-specific environment variable settings. **CONSULT YOUR PLATFORM'S DOCUMENTATION.** \n" +
+    "2. Verify '.env.local' (Primarily for Local Development, MAY BE IGNORED BY YOUR PLATFORM): Ensure '.env.local' in your project ROOT contains: \n" +
     "   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_actual_anon_key \n" +
-    "2. Restart Server: RESTART your Next.js development server after changes. \n" +
-    "3. Firebase Studio / IDX Environment: Check platform-specific environment variable settings. \n" +
-    "4. Typos: Check for typos in '.env.local' or platform settings (must be EXACTLY 'NEXT_PUBLIC_SUPABASE_ANON_KEY')."
+    "3. Restart Server/Redeploy: RESTART your Next.js development server or redeploy after changes. \n" +
+    "4. Typos: Check for typos in '.env.local' or platform settings (must be EXACTLY 'NEXT_PUBLIC_SUPABASE_ANON_KEY'). \n\n" +
+    "If this problem persists after thoroughly checking platform-specific settings (Step 1), the `NEXT_PUBLIC_SUPABASE_ANON_KEY` variable is definitively not being supplied to your Next.js application's environment by your development/hosting platform. **This is an EXTERNAL CONFIGURATION ISSUE that you MUST resolve at the platform level.**"
   );
 }
 
@@ -99,7 +129,7 @@ export const createSupabaseAdminClient = () => {
     // This should ideally be caught by the global check for supabaseUrl, but included for robustness.
     throw new Error(
       "CRITICAL CONFIGURATION ERROR (Admin Client): Environment variable NEXT_PUBLIC_SUPABASE_URL is missing or undefined. \n\n" +
-      "This is also required for the admin client. See previous error messages for NEXT_PUBLIC_SUPABASE_URL troubleshooting. Ensure it's set in your Firebase Studio (IDX) platform settings if applicable."
+      "This is also required for the admin client. See previous error messages for NEXT_PUBLIC_SUPABASE_URL troubleshooting. Ensure it's set in your Firebase Studio (IDX) / Cloud Platform settings if applicable, as these may override `.env.local`."
     );
   }
 
@@ -107,12 +137,14 @@ export const createSupabaseAdminClient = () => {
     throw new Error(
       "CRITICAL CONFIGURATION ERROR: Environment variable SUPABASE_SERVICE_ROLE_KEY is missing or undefined. \n\n" +
       "This variable is REQUIRED for server-side Supabase operations with admin privileges. This key MUST BE KEPT SECRET and should not be prefixed with NEXT_PUBLIC_. \n\n" +
+      "ATTENTION FIREBASE STUDIO (IDX) / CLOUD PLATFORM USERS: Your platform's environment variable settings (see Step 1 below) for 'backend' or 'server-side' secrets are crucial. PLEASE CHECK YOUR PLATFORM'S CONFIGURATION FIRST.\n\n" +
       "Troubleshooting Steps: \n" +
-      "1. Verify '.env.local': Ensure '.env.local' in your project ROOT contains: \n" +
+      "1. Firebase Studio / IDX / Cloud Platform Environment (MOST LIKELY CAUSE IN HOSTED ENVIRONMENTS): If using Firebase Studio (IDX) or similar, check platform-specific environment variable settings for 'backend' or 'server-side' secrets. **CONSULT YOUR PLATFORM'S DOCUMENTATION.** \n" +
+      "2. Verify '.env.local' (Primarily for Local Development, MAY BE IGNORED BY YOUR PLATFORM): Ensure '.env.local' in your project ROOT contains: \n" +
       "   SUPABASE_SERVICE_ROLE_KEY=your_actual_service_role_key \n" +
-      "2. Restart Server: RESTART your Next.js development server after changes. \n" +
-      "3. Firebase Studio / IDX Environment: Check platform-specific environment variable settings for 'backend' or 'server-side' secrets. **CONSULT THE FIREBASE STUDIO (IDX) DOCUMENTATION.** \n" +
-      "4. Typos: Check for typos in '.env.local' or platform settings (must be EXACTLY 'SUPABASE_SERVICE_ROLE_KEY')."
+      "3. Restart Server/Redeploy: RESTART your Next.js development server or redeploy after changes. \n" +
+      "4. Typos: Check for typos in '.env.local' or platform settings (must be EXACTLY 'SUPABASE_SERVICE_ROLE_KEY'). \n\n" +
+      "If this problem persists after thoroughly checking platform-specific settings (Step 1), the `SUPABASE_SERVICE_ROLE_KEY` variable is definitively not being supplied to your Next.js application's environment by your development/hosting platform. **This is an EXTERNAL CONFIGURATION ISSUE that you MUST resolve at the platform level.**"
     );
   }
 
@@ -124,4 +156,6 @@ export const createSupabaseAdminClient = () => {
     }
   });
 };
+    
 
+    
