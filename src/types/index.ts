@@ -1,17 +1,17 @@
 export interface QuizQuestion {
-  id?: number; // Optional for new questions before they are saved
+  id?: number;
   question: string;
-  answers: string[]; // Stored as JSONB in Supabase, parsed to string[] in app
-  correct: number; // Index of the correct answer (correct_answer_index in Supabase)
+  answers: string[];
+  correct: number;
   explanation: string;
-  created_at?: string; // Handled by Supabase
+  created_at?: string;
 }
 
+// Simplified QuizSubmission, can be expanded later if needed
 export interface QuizSubmission {
   id?: number;
-  user_identifier?: string;
+  user_identifier?: string; // Could be a user ID if you add authentication
   score: number;
   total_questions: number;
   submitted_at?: string;
-  // answered_questions?: any; // Consider a more specific type if used
 }

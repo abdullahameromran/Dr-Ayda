@@ -1,12 +1,9 @@
 import QuizClient from '@/components/quiz/QuizClient';
-// import { questions as staticQuestions } from '@/data/questions'; // No longer using static data
-import { getQuestions } from '@/app/admin/questions/actions'; // Fetch from Supabase via server action
-
-export const dynamic = 'force-dynamic'; // Ensure fresh data
+import { questions as staticQuestions } from '@/data/questions';
+import type { QuizQuestion } from '@/types';
 
 export default async function HomePage() {
-  // Fetch questions from Supabase
-  const questions = await getQuestions();
+  const questions: QuizQuestion[] = staticQuestions;
 
   if (!questions || questions.length === 0) {
     return (
@@ -14,9 +11,8 @@ export default async function HomePage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Professor: Aida Pregnancy Quiz</h1>
           <p className="text-lg text-muted-foreground">
-            No questions are currently available. Please check back later or contact an administrator.
+            No questions are currently available. Please check back later.
           </p>
-           <p className="text-sm mt-4">Admin: <a href="/admin/questions" className="underline text-primary">Add Questions</a></p>
         </div>
       </main>
     );
