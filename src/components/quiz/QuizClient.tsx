@@ -134,7 +134,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
               onClick={() => handleAnswerSelect(index)}
               disabled={showFeedback}
             >
-              <span className="w-full text-left text-black dark:text-neutral-50">{String.fromCharCode(65 + index)}. {answer}</span>
+              <span className="w-full text-left text-black dark:text-neutral-50 whitespace-normal">{String.fromCharCode(65 + index)}. {answer}</span>
             </Button>
           ))}
         </div>
@@ -162,5 +162,3 @@ export default function QuizClient({ questions }: QuizClientProps) {
     </Card>
   );
 }
-
-    
