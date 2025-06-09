@@ -41,7 +41,7 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 bg-background">
+    <main className="flex min-h-screen flex-col items-start p-4 sm:p-8 bg-background">
       <div className="w-full max-w-3xl text-start mb-8 rounded-lg bg-card p-6 sm:p-8 shadow-xl">
         <div className="flex flex-col items-center mb-6">
           <Image
@@ -55,17 +55,17 @@ export default async function HomePage() {
           />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-3 font-headline text-center">{appTitle}</h1>
-        <p className="text-md sm:text-lg text-foreground/90 leading-7 mb-6 px-2 font-body whitespace-pre-line">
+        <p className="text-md sm:text-lg text-foreground/90 leading-7 mb-6 px-2 font-body whitespace-pre-line font-semibold">
           {arabicIntro}
         </p>
         <div className="text-sm sm:text-md text-foreground space-y-1 font-semibold">
-          <p className="font-headline">
+          <p className="font-headline font-semibold">
             تحت إشراف: {supervisorName}
           </p>
-          <p className="font-body">
+          <p className="font-body font-semibold">
             {supervisorTitle}
           </p>
-          <p className="mt-1 font-body">
+          <p className="mt-1 font-body font-semibold">
             للتواصل: <a href={`tel:${contactNumber}`} className="text-primary hover:underline dir-ltr inline-block">{contactNumber}</a>
           </p>
         </div>
