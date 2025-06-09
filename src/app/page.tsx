@@ -20,7 +20,7 @@ export default async function HomePage() {
   const questionsForQuiz: QuizQuestion[] = shuffledQuestions.slice(0, Math.min(20, shuffledQuestions.length));
 
   const appTitle = "Comprehensive Review in Maternal And Newborn Health Nursing";
-  const arabicIntro = "يهدف هذا التطبيق لتقديم معلومات ودعم في كل ما يخص صحة المرأة، بما في ذلك الحمل والولادة، العناية بعد الولادة، تنظيم الأسرة، وغيرها من المواضيع الهامة. صحتكِ هي أولويتنا.";
+  const arabicIntro = "مراجعة شاملة في تمريض الأمومة وحديثي الولادة، تشمل أهم المفاهيم والأسئلة المتوقعة.\nأداة تعليمية مثالية للطلاب والممارسين لتعزيز الفهم والاستعداد للاختبارات.";
   const supervisorName = "أ.د/ عايدة عبدالرازق";
   const supervisorTitle = "أستاذ صحة المرأة - كلية التمريض، جامعة المنوفية";
   const contactNumber = "01205342194";
@@ -55,7 +55,7 @@ export default async function HomePage() {
           />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-3 font-headline text-center">{appTitle}</h1>
-        <p className="text-md sm:text-lg text-foreground/90 leading-7 mb-6 px-2 font-body">
+        <p className="text-md sm:text-lg text-foreground/90 leading-7 mb-6 px-2 font-body whitespace-pre-line">
           {arabicIntro}
         </p>
         <div className="text-sm sm:text-md text-foreground space-y-1 font-semibold">
