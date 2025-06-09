@@ -139,18 +139,18 @@ export default function QuizClient({ questions }: QuizClientProps) {
           ))}
         </div>
         {showFeedback && (
-          <div className={`mt-6 p-4 rounded-md text-sm ${selectedAnswer === currentQuestion.correct ? 'bg-accent/20 border border-accent text-accent-foreground' : 'bg-destructive/20 border border-destructive text-destructive-foreground'}`}>
+          <div className={`mt-6 p-4 rounded-md text-sm ${selectedAnswer === currentQuestion.correct ? 'bg-accent/20 border border-accent' : 'bg-destructive/20 border border-destructive'}`}>
             <div className="flex items-center mb-2">
               {selectedAnswer === currentQuestion.correct ? (
                 <CheckCircle2 className="h-5 w-5 mr-2 text-accent" />
               ) : (
                 <XCircle className="h-5 w-5 mr-2 text-destructive" />
               )}
-              <p className="font-semibold font-body">
+              <p className="font-semibold font-body text-black dark:text-neutral-50">
                 {selectedAnswer === currentQuestion.correct ? 'Correct!' : 'Incorrect!'}
               </p>
             </div>
-            <p className="font-body text-left font-semibold">{currentQuestion.explanation}</p>
+            <p className="font-body text-left font-semibold text-black dark:text-neutral-50">{currentQuestion.explanation}</p>
           </div>
         )}
       </CardContent>
@@ -163,3 +163,4 @@ export default function QuizClient({ questions }: QuizClientProps) {
   );
 }
 
+    
