@@ -130,11 +130,11 @@ export default function QuizClient({ questions }: QuizClientProps) {
             <Button
               key={index}
               variant={getButtonVariant(index)}
-              className={`w-full h-auto py-3 px-4 text-base font-body transition-all duration-200 ease-in-out transform hover:scale-[1.02] text-left ${getButtonClass(index)}`}
+              className={`w-full h-auto py-3 px-4 text-base font-body transition-all duration-200 ease-in-out transform hover:scale-[1.02] text-left justify-start ${getButtonClass(index)}`}
               onClick={() => handleAnswerSelect(index)}
               disabled={showFeedback}
             >
-              <span dir="ltr" className="w-full text-left">{answer}</span>
+              <span dir="ltr" className="w-full text-left">{String.fromCharCode(65 + index)}. {answer}</span>
             </Button>
           ))}
         </div>
@@ -150,7 +150,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
                 {selectedAnswer === currentQuestion.correct ? 'Correct!' : 'Incorrect!'}
               </p>
             </div>
-            <p dir="ltr" className="font-body text-left">{currentQuestion.explanation}</p>
+            <p dir="ltr" className={`font-body text-left ${selectedAnswer !== currentQuestion.correct ? 'font-semibold' : ''}`}>{currentQuestion.explanation}</p>
           </div>
         )}
       </CardContent>

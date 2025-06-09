@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 94.1%; /* #F0F0F0 */
-    --foreground: 224 71.4% 4.1%; /* Dark Blue */
+    --background: 210 40% 98%; /* Very light cool gray/blue */
+    --foreground: 210 20% 25%; /* Dark cool gray */
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 20% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 25%;
 
-    --primary: 142 25% 64.1%; /* Soft Blue #94B49F */
-    --primary-foreground: 142 25% 15.1%; /* Darker shade of Soft Blue */
+    --primary: 210 70% 50%; /* Professional blue */
+    --primary-foreground: 210 40% 98%; /* Light text on primary */
 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220 8.9% 46.1%;
+    --secondary: 210 30% 90%; /* Lighter cool gray */
+    --secondary-foreground: 210 15% 45%; /* Medium cool gray */
 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted: 210 30% 90%;
+    --muted-foreground: 210 15% 55%;
 
-    --accent: 127 30% 73.5%; /* Muted Green #A7D1AB */
-    --accent-foreground: 127 30% 20.5%; /* Darker shade of Muted Green */
+    --accent: 180 50% 45%; /* Professional teal/cyan */
+    --accent-foreground: 180 20% 95%; /* Light text on accent */
 
-    --destructive: 0 62.8% 50.6%; /* Default Destructive Red */
+    --destructive: 0 70% 55%; /* Slightly desaturated red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 142 25% 55.1%; /* Ring color based on primary */
+    --border: 210 20% 85%; /* Subtle border */
+    --input: 210 20% 88%;
+    --ring: 210 70% 60%; /* Slightly lighter blue for ring */
 
     --radius: 0.5rem;
 
@@ -42,33 +42,33 @@
   }
 
   .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
+    --background: 210 20% 12%; /* Dark cool gray/blue */
+    --foreground: 210 30% 90%; /* Light cool gray */
 
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
+    --card: 210 20% 15%; /* Slightly lighter dark gray for cards */
+    --card-foreground: 210 30% 90%;
 
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 210 20% 10%; /* Very dark */
+    --popover-foreground: 210 30% 90%;
 
-    --primary: 142 25% 64.1%;
-    --primary-foreground: 142 25% 15.1%;
+    --primary: 210 75% 60%; /* Vibrant professional blue for dark mode */
+    --primary-foreground: 210 15% 10%; /* Dark text on primary */
 
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 210 15% 25%; /* Medium-dark cool gray */
+    --secondary-foreground: 210 30% 85%;
 
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
+    --muted: 210 15% 25%;
+    --muted-foreground: 210 20% 65%;
 
-    --accent: 127 30% 73.5%;
-    --accent-foreground: 127 30% 20.5%;
+    --accent: 180 55% 55%; /* Teal/cyan for dark mode */
+    --accent-foreground: 180 15% 15%; /* Dark text on accent */
 
-    --destructive: 0 62.8% 50.6%;
+    --destructive: 0 65% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 142 25% 55.1%;
+    --border: 210 15% 30%;
+    --input: 210 15% 30%;
+    --ring: 210 75% 65%;
   }
 }
 
