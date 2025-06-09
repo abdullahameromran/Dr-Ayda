@@ -124,7 +124,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <h2 dir="ltr" className="text-lg font-semibold mb-6 font-body text-left">{currentQuestion.question}</h2>
+        <h2 dir="ltr" className="text-xl font-semibold mb-6 font-body text-left">{currentQuestion.question}</h2>
         <div className="space-y-3">
           {currentQuestion.answers.map((answer, index) => (
             <Button
