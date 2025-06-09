@@ -114,17 +114,17 @@ export default function QuizClient({ questions }: QuizClientProps) {
   return (
     <Card className="w-full max-w-lg shadow-xl rounded-lg">
       <CardHeader>
-        <div className="flex items-center justify-center sm:justify-start mb-2">
+        <div className="flex items-center justify-start mb-2">
           <HeartPulse className="h-8 w-8 text-primary mr-2 hidden sm:block" />
-          <CardTitle className="font-headline text-xl sm:text-2xl text-center sm:text-start">{quizTitle}</CardTitle>
+          <CardTitle className="font-headline text-xl sm:text-2xl text-start">{quizTitle}</CardTitle>
         </div>
         <Progress value={progressValue} className="w-full my-2 h-2" />
-        <CardDescription className="font-body text-center sm:text-start">
+        <CardDescription className="font-body text-start">
           Question {currentQuestionIndex + 1} of {questions.length}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <h2 className="text-lg font-semibold mb-6 font-body text-center sm:text-start">{currentQuestion.question}</h2>
+        <h2 className="text-lg font-semibold mb-6 font-body text-start">{currentQuestion.question}</h2>
         <div className="space-y-3">
           {currentQuestion.answers.map((answer, index) => (
             <Button
@@ -162,3 +162,4 @@ export default function QuizClient({ questions }: QuizClientProps) {
     </Card>
   );
 }
+
