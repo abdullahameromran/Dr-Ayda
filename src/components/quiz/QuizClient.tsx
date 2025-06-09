@@ -150,7 +150,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
                 {selectedAnswer === currentQuestion.correct ? 'Correct!' : 'Incorrect!'}
               </p>
             </div>
-            <p dir="ltr" className={`font-body text-left ${selectedAnswer !== currentQuestion.correct ? 'font-semibold' : ''}`}>{currentQuestion.explanation}</p>
+            <p dir="ltr" className="font-body text-left font-semibold">{currentQuestion.explanation}</p>
           </div>
         )}
       </CardContent>
