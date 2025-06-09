@@ -29,7 +29,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
   const currentQuestion = questions[currentQuestionIndex];
 
   const handleAnswerSelect = (answerIndex: number) => {
-    if (showFeedback) return; // Prevent changing answer after feedback is shown
+    if (showFeedback) return; 
 
     setSelectedAnswer(answerIndex);
     setShowFeedback(true);
@@ -62,12 +62,12 @@ export default function QuizClient({ questions }: QuizClientProps) {
     if (!showFeedback) {
       return selectedAnswer === index ? '' : 'outline';
     }
-    // Feedback is shown
+    
     if (index === currentQuestion.correct) {
-      return 'bg-accent text-accent-foreground hover:bg-accent/90';
+      return 'bg-accent hover:bg-accent/90';
     }
     if (index === selectedAnswer && index !== currentQuestion.correct) {
-      return 'bg-destructive text-destructive-foreground hover:bg-destructive/90';
+      return 'bg-destructive hover:bg-destructive/90';
     }
     return 'outline';
   };
@@ -77,10 +77,10 @@ export default function QuizClient({ questions }: QuizClientProps) {
       return selectedAnswer === index ? 'default' : 'outline';
     }
     if (index === currentQuestion.correct) {
-      return undefined; // Using className for accent
+      return undefined; 
     }
     if (index === selectedAnswer && index !== currentQuestion.correct) {
-      return undefined; // Using className for destructive
+      return undefined; 
     }
     return 'outline';
   };
@@ -162,3 +162,4 @@ export default function QuizClient({ questions }: QuizClientProps) {
     </Card>
   );
 }
+
