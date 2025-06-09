@@ -29,7 +29,7 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 bg-background">
+    <main className="flex min-h-screen flex-col items-start p-4 sm:p-8 bg-background">
       <div className="w-full max-w-3xl text-center mb-8 rounded-lg bg-card p-6 shadow-md">
         <Image 
           src={supervisorImage} 
