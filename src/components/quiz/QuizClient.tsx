@@ -94,7 +94,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
           <CardDescription className="font-body text-lg">Quiz Completed!</CardDescription>
           <HeartPulse className="mx-auto h-12 w-12 text-primary mt-2" />
         </CardHeader>
-        <CardContent className="text-start"> {/* Changed from text-center to text-start */}
+        <CardContent className="text-start">
           <p className="text-xl font-body mb-4">
             Your final score is: <span className="font-bold text-primary">{score}</span> out of {questions.length}
           </p>
@@ -114,9 +114,9 @@ export default function QuizClient({ questions }: QuizClientProps) {
   return (
     <Card className="w-full max-w-lg shadow-xl rounded-lg">
       <CardHeader>
-        <div className="flex items-center justify-center mb-2"> {/* Changed from justify-start to justify-center */}
+        <div className="flex items-center justify-center mb-2">
           <HeartPulse className="h-8 w-8 text-primary mr-2 hidden sm:block" />
-          <CardTitle className="font-headline text-xl sm:text-2xl text-center">{quizTitle}</CardTitle> {/* Changed from text-start to text-center */}
+          <CardTitle className="font-headline text-xl sm:text-2xl text-center">{quizTitle}</CardTitle>
         </div>
         <Progress value={progressValue} className="w-full my-2 h-2" />
         <CardDescription className="font-body text-start">
@@ -130,7 +130,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
             <Button
               key={index}
               variant={getButtonVariant(index)}
-              className={`w-full justify-start text-left h-auto py-3 px-4 text-base font-body transition-all duration-200 ease-in-out transform hover:scale-[1.02] ${getButtonClass(index)}`}
+              className={`w-full justify-start text-start h-auto py-3 px-4 text-base font-body transition-all duration-200 ease-in-out transform hover:scale-[1.02] ${getButtonClass(index)}`}
               onClick={() => handleAnswerSelect(index)}
               disabled={showFeedback}
             >
