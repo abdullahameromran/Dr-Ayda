@@ -124,7 +124,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <h2 className="text-lg font-semibold mb-6 font-body text-left">{currentQuestion.question}</h2>
+        <h2 dir="ltr" className="text-lg font-semibold mb-6 font-body text-left">{currentQuestion.question}</h2>
         <div className="space-y-3">
           {currentQuestion.answers.map((answer, index) => (
             <Button
@@ -134,7 +134,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
               onClick={() => handleAnswerSelect(index)}
               disabled={showFeedback}
             >
-              {answer}
+              <span dir="ltr">{answer}</span>
             </Button>
           ))}
         </div>
@@ -150,7 +150,7 @@ export default function QuizClient({ questions }: QuizClientProps) {
                 {selectedAnswer === currentQuestion.correct ? 'Correct!' : 'Incorrect!'}
               </p>
             </div>
-            <p className="font-body text-start">{currentQuestion.explanation}</p>
+            <p dir="ltr" className="font-body text-start">{currentQuestion.explanation}</p>
           </div>
         )}
       </CardContent>
@@ -162,3 +162,4 @@ export default function QuizClient({ questions }: QuizClientProps) {
     </Card>
   );
 }
+
