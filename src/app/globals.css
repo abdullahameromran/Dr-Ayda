@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 94%; /* Light Gray (#F0F0F0) from PRD */
-    --foreground: 210 10% 23%; /* Dark Slate Gray for text */
+    --background: 240 8% 96%; /* Apple: Light Gray #F5F5F7 */
+    --foreground: 240 3% 12%; /* Apple: Dark Charcoal #1D1D1F */
 
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 210 10% 23%;
+    --card: 0 0% 100%; /* Apple: Pure White #FFFFFF */
+    --card-foreground: 240 3% 12%; /* Apple: Dark Charcoal #1D1D1F */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 10% 23%;
+    --popover: 0 0% 100%; /* Apple: Pure White #FFFFFF */
+    --popover-foreground: 240 3% 12%; /* Apple: Dark Charcoal #1D1D1F */
 
-    --primary: 158 16% 64%; /* Soft Blue (#94B49F) from PRD */
-    --primary-foreground: 158 25% 15%; /* Dark desaturated cyan for text on primary */
+    --primary: 212 100% 45%; /* Apple: System Blue #0071E3 */
+    --primary-foreground: 210 100% 98%; /* Custom: Light text for blue bg */
 
-    --secondary: 210 20% 88%; /* Lighter cool gray */
-    --secondary-foreground: 210 10% 35%; /* Medium cool gray */
+    --secondary: 240 8% 94%; /* Custom: Slightly darker than background */
+    --secondary-foreground: 240 3% 30%; /* Custom: Darker gray for text on secondary */
 
-    --muted: 210 20% 92%; /* Even lighter cool gray for muted elements */
-    --muted-foreground: 210 10% 45%; /* Medium-light gray for muted text */
+    --muted: 240 11% 91%; /* Apple: Soft Gray #E5E5EA */
+    --muted-foreground: 240 2% 44%; /* Apple: Cool Gray #6E6E73 */
 
-    --accent: 125 29% 71%; /* Muted Green (#A7D1AB) from PRD */
-    --accent-foreground: 125 30% 20%; /* Dark desaturated green for text on accent */
+    --accent: 212 100% 45%; /* Apple: System Blue #0071E3 (using as accent) */
+    --accent-foreground: 210 100% 98%; /* Custom: Light text for blue bg */
 
-    --destructive: 0 72% 51%; /* Standard red for destructive actions */
+    --destructive: 0 72% 51%; /* Standard red */
     --destructive-foreground: 0 0% 98%; /* Light text on destructive */
 
-    --border: 210 15% 85%; /* Subtle border color */
-    --input: 210 15% 88%; /* Input field background */
-    --ring: 158 20% 58%; /* Focus ring, based on primary */
+    --border: 240 11% 85%; /* Derived from Apple: Soft Gray #E5E5EA */
+    --input: 0 0% 100%; /* Apple: White input field bg */
+    --ring: 212 100% 45%; /* Apple: System Blue #0071E3 for focus */
 
     --radius: 0.5rem;
 
@@ -39,36 +39,46 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    /* Sidebar specific variables for light mode */
+    --sidebar-background: 240 8% 96%;
+    --sidebar-foreground: 240 3% 12%;
+    --sidebar-primary: 212 100% 45%;
+    --sidebar-primary-foreground: 210 100% 98%;
+    --sidebar-accent: 212 100% 45%;
+    --sidebar-accent-foreground: 210 100% 98%;
+    --sidebar-border: 240 11% 85%;
+    --sidebar-ring: 212 100% 45%;
   }
 
   .dark {
-    --background: 210 20% 9%; /* Very dark cool gray/blue */
-    --foreground: 210 15% 80%; /* Light cool gray for text */
+    --background: 0 0% 0%; /* Apple: Almost Black #000000 */
+    --foreground: 0 0% 95%; /* Custom: Off-white for readability */
 
-    --card: 210 15% 12%; /* Slightly lighter dark gray for cards */
-    --card-foreground: 210 15% 80%;
+    --card: 0 0% 10%; /* Custom: Dark card bg (e.g., #1A1A1A) */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 210 20% 7%; /* Very dark for popovers */
-    --popover-foreground: 210 15% 80%;
+    --popover: 0 0% 12%; /* Custom: Slightly lighter dark popover (e.g., #1F1F1F) */
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 158 20% 70%; /* Lighter Soft Blue for dark mode */
-    --primary-foreground: 158 25% 15%; /* Dark desaturated cyan for text on primary */
+    --primary: 210 100% 52%; /* Apple: Soft Blue Hover #0A84FF (used as primary in dark) */
+    --primary-foreground: 210 100% 98%; /* Custom: Light text for this blue */
 
-    --secondary: 210 15% 20%; /* Medium-dark cool gray */
-    --secondary-foreground: 210 15% 70%;
+    --secondary: 0 0% 12%; /* Custom: Dark secondary bg */
+    --secondary-foreground: 0 0% 60%; /* Custom: Lighter gray text */
 
-    --muted: 210 15% 18%; /* Darker muted gray */
-    --muted-foreground: 210 15% 55%; /* Lighter muted text for dark mode */
+    --muted: 0 0% 15%; /* Custom: Darker muted gray */
+    --muted-foreground: 0 0% 50%; /* Custom: Medium gray muted text */
 
-    --accent: 125 35% 78%; /* Lighter Muted Green for dark mode */
-    --accent-foreground: 125 30% 20%; /* Dark desaturated green for text on accent */
+    --accent: 210 100% 52%; /* Apple: Soft Blue Hover #0A84FF (used as accent in dark) */
+    --accent-foreground: 210 100% 98%; /* Custom: Light text for this blue */
 
-    --destructive: 0 60% 55%; /* Slightly less saturated red for dark mode */
+    --destructive: 0 80% 60%; /* Custom: Brighter red for dark mode */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 10% 28%; /* Darker border */
-    --input: 210 10% 25%; /* Darker input background */
-    --ring: 158 25% 65%; /* Focus ring for dark mode, based on primary */
+    --border: 0 0% 20%; /* Custom: Subtle dark border (e.g., #333333) */
+    --input: 0 0% 8%; /* Custom: Very dark input bg (e.g., #141414) */
+    --ring: 210 100% 52%; /* Apple: Soft Blue Hover #0A84FF for focus */
 
     /* Chart colors can be adjusted for dark mode if needed, keeping them for now */
     --chart-1: 12 70% 65%;
@@ -76,6 +86,16 @@
     --chart-3: 197 30% 30%;
     --chart-4: 43 70% 70%;
     --chart-5: 27 80% 70%;
+
+    /* Sidebar specific variables for dark mode */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 210 100% 52%;
+    --sidebar-primary-foreground: 210 100% 98%;
+    --sidebar-accent: 210 100% 52%;
+    --sidebar-accent-foreground: 210 100% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 210 100% 52%;
   }
 }
 
