@@ -21,8 +21,8 @@ export default async function HomePage() {
 
   const appTitle = "Comprehensive Review in Maternal And Newborn Health Nursing";
   const introText = "A comprehensive review in maternal and newborn nursing, covering key concepts and anticipated questions.\nAn ideal educational tool for students and practitioners to enhance understanding and prepare for exams.";
-  const supervisorName = "Prof. Dr. Aida Abdelrazek"; // Name is likely universal, but title is translated
-  const supervisorTitle = "Professor of Women's Health - Faculty of Nursing, Menoufia University";
+  const supervisorName = "Prof. Dr. Aida Abdelrazek";
+  const supervisorTitle = "Professor of Maternal And Newborn Health Nursing - Faculty of Nursing, Menoufia University";
   const contactNumber = "01205342194";
   const supervisorImage = "https://be13a6bfb72b1843b287a4c59c4f4174.cdn.bubble.io/f1749070664202x663207571008088400/8624f5b1-c5a3-438a-bbfa-4c1deda79052.jpg";
 
