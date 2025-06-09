@@ -2,8 +2,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Professor: Aida',
-  description: 'Privacy Policy for Professor: Aida Pregnancy Quiz.',
+  title: 'Privacy Policy - Comprehensive Review in Maternal And Newborn Health Nursing',
+  description: 'Privacy Policy for Comprehensive Review in Maternal And Newborn Health Nursing.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -12,13 +12,14 @@ export default function PrivacyPolicyPage() {
       <div className="w-full max-w-3xl space-y-8 rounded-lg bg-card p-6 shadow-lg md:p-10">
         <header className="text-center">
           <h1 className="font-headline text-3xl font-bold text-primary">Privacy Policy</h1>
+          <p className="font-body mt-1">For: Comprehensive Review in Maternal And Newborn Health Nursing</p>
           <p className="mt-2 text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
         </header>
 
         <section className="space-y-4">
           <h2 className="font-headline text-2xl font-semibold">1. Introduction</h2>
           <p className="font-body leading-relaxed text-foreground/90">
-            Welcome to Professor: Aida Pregnancy Quiz ("us", "we", or "our"). We are committed to protecting your
+            Welcome to "Comprehensive Review in Maternal And Newborn Health Nursing" ("us", "we", or "our"). We are committed to protecting your
             personal information and your right to privacy. If you have any questions or concerns about this
             privacy notice, or our practices with regards to your personal information, please contact us.
           </p>
@@ -27,7 +28,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-4">
           <h2 className="font-headline text-2xl font-semibold">2. Information We Collect</h2>
           <p className="font-body leading-relaxed text-foreground/90">
-            As of the last updated date, Professor: Aida Pregnancy Quiz does not collect any personally identifiable information
+            As of the last updated date, "Comprehensive Review in Maternal And Newborn Health Nursing" does not collect any personally identifiable information
             from its users. The quiz is designed to be an educational tool, and your scores or answers are not
             stored or tracked by us.
           </p>
@@ -75,8 +76,8 @@ export default function PrivacyPolicyPage() {
             If you have any questions about this Privacy Policy, you can contact us:
           </p>
           <ul className="list-inside list-disc font-body leading-relaxed text-foreground/90">
-            <li>By email: [Your Contact Email Address]</li>
-            <li>By visiting this page on our website: [Link to your contact page, if any]</li>
+            <li>By email: [Your Contact Email Address - Please provide if available]</li>
+            <li>By phone: <a href="tel:01205342194" className="text-primary hover:underline dir-ltr inline-block">01205342194</a> (أ.د/ عايدة عبدالرازق)</li>
           </ul>
         </section>
       </div>

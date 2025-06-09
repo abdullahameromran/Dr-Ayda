@@ -19,6 +19,8 @@ export default function QuizClient({ questions }: QuizClientProps) {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [progressValue, setProgressValue] = useState(0);
 
+  const quizTitle = "Comprehensive Review in Maternal And Newborn Health Nursing";
+
   useEffect(() => {
     setProgressValue(((currentQuestionIndex + 1) / questions.length) * 100);
   }, [currentQuestionIndex, questions.length]);
@@ -87,8 +89,9 @@ export default function QuizClient({ questions }: QuizClientProps) {
     return (
       <Card className="w-full max-w-lg shadow-xl rounded-lg">
         <CardHeader className="text-center">
-          <CardTitle className="font-headline text-2xl mb-2">Quiz Completed!</CardTitle>
-          <HeartPulse className="mx-auto h-12 w-12 text-primary" />
+          <CardTitle className="font-headline text-xl sm:text-2xl mb-2">{quizTitle}</CardTitle>
+          <CardDescription className="font-body text-lg">Quiz Completed!</CardDescription>
+          <HeartPulse className="mx-auto h-12 w-12 text-primary mt-2" />
         </CardHeader>
         <CardContent className="text-center">
           <p className="text-xl font-body mb-4">
@@ -110,9 +113,9 @@ export default function QuizClient({ questions }: QuizClientProps) {
   return (
     <Card className="w-full max-w-lg shadow-xl rounded-lg">
       <CardHeader>
-        <div className="flex items-center justify-center mb-2">
-          <HeartPulse className="h-8 w-8 text-primary mr-2" />
-          <CardTitle className="font-headline text-2xl text-center">Professor: Aida Pregnancy Quiz</CardTitle>
+        <div className="flex items-center justify-center mb-2 text-center">
+          <HeartPulse className="h-8 w-8 text-primary mr-2 hidden sm:block" />
+          <CardTitle className="font-headline text-xl sm:text-2xl">{quizTitle}</CardTitle>
         </div>
         <Progress value={progressValue} className="w-full my-2 h-2" />
         <CardDescription className="text-center font-body">

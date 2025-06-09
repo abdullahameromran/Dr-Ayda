@@ -1,15 +1,24 @@
 import QuizClient from '@/components/quiz/QuizClient';
 import { questions as staticQuestions } from '@/data/questions';
 import type { QuizQuestion } from '@/types';
+import Image from 'next/image';
 
 export default async function HomePage() {
   const questions: QuizQuestion[] = staticQuestions;
+
+  const appTitle = "Comprehensive Review in Maternal And Newborn Health Nursing";
+  const arabicIntro = "يهدف هذا التطبيق لتقديم معلومات ودعم في كل ما يخص صحة المرأة، بما في ذلك الحمل والولادة، العناية بعد الولادة، تنظيم الأسرة، وغيرها من المواضيع الهامة. صحتكِ هي أولويتنا.";
+  const supervisorName = "أ.د/ عايدة عبدالرازق";
+  const supervisorTitle = "أستاذ صحة المرأة - كلية التمريض، جامعة المنوفية";
+  const contactNumber = "01205342194";
+  const supervisorImage = "https://storage.googleapis.com/project_tia_images/KWlGfQG.png";
+
 
   if (!questions || questions.length === 0) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Professor: Aida Pregnancy Quiz</h1>
+          <h1 className="text-2xl font-bold mb-4">{appTitle}</h1>
           <p className="text-lg text-muted-foreground">
             No questions are currently available. Please check back later.
           </p>
@@ -19,7 +28,28 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-background">
+    <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 bg-background">
+      <div className="w-full max-w-3xl text-center mb-8 rounded-lg bg-card p-6 shadow-md">
+        <Image 
+          src={supervisorImage} 
+          alt="Portrait of Dr. Aida Abd El Razek" 
+          width={120} 
+          height={120} 
+          className="rounded-full mx-auto mb-4 shadow-lg"
+          data-ai-hint="portrait woman" 
+        />
+        <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-3 font-headline">{appTitle}</h1>
+        <p className="text-md sm:text-lg text-foreground/90 leading-relaxed mb-6 px-2 font-body">
+          {arabicIntro}
+        </p>
+        <div className="text-sm sm:text-md text-foreground">
+          <p className="font-semibold font-headline">تحت إشراف: {supervisorName}</p>
+          <p className="font-body">{supervisorTitle}</p>
+          <p className="mt-2 font-body">
+            للتواصل: <a href={`tel:${contactNumber}`} className="text-primary hover:underline dir-ltr inline-block">{contactNumber}</a>
+          </p>
+        </div>
+      </div>
       <QuizClient questions={questions} />
     </main>
   );
