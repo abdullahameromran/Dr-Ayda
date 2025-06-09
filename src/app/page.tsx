@@ -42,20 +42,20 @@ export default async function HomePage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 bg-background">
-      <div className="w-full max-w-3xl text-start mb-8 rounded-lg bg-card p-6 shadow-md">
-        <div className="flex flex-col items-center mb-4"> {/* Centering container for image */}
+      <div className="w-full max-w-3xl text-start mb-8 rounded-lg bg-card p-6 sm:p-8 shadow-xl">
+        <div className="flex flex-col items-center mb-6">
           <Image
             src={supervisorImage}
-            alt="Portrait of Dr. Aida Abd El Razek"
+            alt="Portrait of Dr. Aida Abd El Razek, supervisor"
             width={120}
             height={120}
-            className="rounded-full shadow-lg"
+            className="rounded-full shadow-lg animate-subtle-breathing"
             data-ai-hint="portrait woman"
             priority
           />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-3 font-headline text-center">{appTitle}</h1>
-        <p className="text-md sm:text-lg text-foreground/90 leading-relaxed mb-6 px-2 font-body">
+        <p className="text-md sm:text-lg text-foreground/90 leading-7 mb-6 px-2 font-body">
           {arabicIntro}
         </p>
         <div className="text-sm sm:text-md text-foreground space-y-1 font-semibold">
