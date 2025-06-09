@@ -90,8 +90,8 @@ export default function QuizClient({ questions }: QuizClientProps) {
     return (
       <Card className="w-full max-w-lg shadow-xl rounded-lg">
         <CardHeader className="text-center">
-          <CardTitle className="font-headline text-xl sm:text-2xl mb-2">{quizTitle}</CardTitle>
-          <CardDescription className="font-body text-lg">Quiz Completed!</CardDescription>
+          <CardTitle className="font-headline text-xl sm:text-2xl mb-2 text-center">{quizTitle}</CardTitle>
+          <CardDescription className="font-body text-lg text-start">Quiz Completed!</CardDescription>
           <HeartPulse className="mx-auto h-12 w-12 text-primary mt-2" />
         </CardHeader>
         <CardContent className="text-start">
@@ -124,13 +124,13 @@ export default function QuizClient({ questions }: QuizClientProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <h2 className="text-lg font-semibold mb-6 font-body text-start">{currentQuestion.question}</h2>
+        <h2 className="text-lg font-semibold mb-6 font-body text-left">{currentQuestion.question}</h2>
         <div className="space-y-3">
           {currentQuestion.answers.map((answer, index) => (
             <Button
               key={index}
               variant={getButtonVariant(index)}
-              className={`w-full justify-start text-start h-auto py-3 px-4 text-base font-body transition-all duration-200 ease-in-out transform hover:scale-[1.02] ${getButtonClass(index)}`}
+              className={`w-full justify-start text-left h-auto py-3 px-4 text-base font-body transition-all duration-200 ease-in-out transform hover:scale-[1.02] ${getButtonClass(index)}`}
               onClick={() => handleAnswerSelect(index)}
               disabled={showFeedback}
             >
@@ -162,4 +162,3 @@ export default function QuizClient({ questions }: QuizClientProps) {
     </Card>
   );
 }
-
