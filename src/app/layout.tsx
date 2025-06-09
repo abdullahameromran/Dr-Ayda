@@ -7,7 +7,7 @@ import { BookOpenText, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Comprehensive Review in Maternal And Newborn Health Nursing',
-  description: 'يهدف هذا التطبيق لتقديم معلومات ودعم في كل ما يخص صحة المرأة، بما في ذلك الحمل والولادة، العناية بعد الولادة، تنظيم الأسرة، وغيرها من المواضيع الهامة. صحتكِ هي أولويتنا.',
+  description: 'An essential learning and review tool for maternal and newborn health nursing. Master key concepts and prepare effectively with comprehensive questions and explanations.',
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="en" dir="ltr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -38,11 +38,11 @@ export default function RootLayout({
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-primary hover:text-primary/90 transition-colors">
                 <BookOpenText className="h-6 w-6" />
-                <span>مراجعة تمريض الأمومة</span>
+                <span>Maternal Nursing Review</span>
               </Link>
               <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
                  <ShieldCheck className="h-4 w-4" />
-                <span>سياسة الخصوصية</span>
+                <span>Privacy Policy</span>
               </Link>
             </div>
           </header>
@@ -53,9 +53,9 @@ export default function RootLayout({
 
           <footer className="bg-muted text-muted-foreground py-6 text-sm border-t mt-auto">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <p>&copy; {new Date().getFullYear()} مراجعة تمريض الأمومة والطفولة. جميع الحقوق محفوظة.</p>
+              <p>&copy; {new Date().getFullYear()} Maternal and Newborn Health Nursing Review. All rights reserved.</p>
               <p className="mt-1">
-                تطبيق تعليمي مقدم من أ.د/ عايدة عبدالرازق
+                An educational application by Prof. Dr. Aida Abdelrazek
               </p>
             </div>
           </footer>

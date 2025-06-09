@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col items-center">
-      <div className="w-full max-w-3xl space-y-8 rounded-lg bg-card p-6 shadow-lg md:p-10">
+      <div className="w-full max-w-3xl space-y-8 rounded-lg bg-card p-6 shadow-lg md:p-10 text-left">
         <header className="text-center">
           <h1 className="font-headline text-3xl font-bold text-primary">Privacy Policy</h1>
           <p className="font-body mt-1">For: Comprehensive Review in Maternal And Newborn Health Nursing</p>
@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="list-inside list-disc font-body leading-relaxed text-foreground/90">
             <li>By email: [Your Contact Email Address - Please provide if available]</li>
-            <li>By phone: <a href="tel:01205342194" className="text-primary hover:underline dir-ltr inline-block">01205342194</a> (أ.د/ عايدة عبدالرازق)</li>
+            <li>By phone: <a href="tel:01205342194" className="text-primary hover:underline inline-block">01205342194</a> (Prof. Dr. Aida Abdelrazek)</li>
           </ul>
         </section>
       </div>

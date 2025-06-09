@@ -20,9 +20,9 @@ export default async function HomePage() {
   const questionsForQuiz: QuizQuestion[] = shuffledQuestions.slice(0, Math.min(20, shuffledQuestions.length));
 
   const appTitle = "Comprehensive Review in Maternal And Newborn Health Nursing";
-  const arabicIntro = "مراجعة شاملة في تمريض الأمومة وحديثي الولادة، تشمل أهم المفاهيم والأسئلة المتوقعة.\nأداة تعليمية مثالية للطلاب والممارسين لتعزيز الفهم والاستعداد للاختبارات.";
-  const supervisorName = "أ.د/ عايدة عبدالرازق";
-  const supervisorTitle = "أستاذ صحة المرأة - كلية التمريض، جامعة المنوفية";
+  const introText = "A comprehensive review in maternal and newborn nursing, covering key concepts and anticipated questions.\nAn ideal educational tool for students and practitioners to enhance understanding and prepare for exams.";
+  const supervisorName = "Prof. Dr. Aida Abdelrazek"; // Name is likely universal, but title is translated
+  const supervisorTitle = "Professor of Women's Health - Faculty of Nursing, Menoufia University";
   const contactNumber = "01205342194";
   const supervisorImage = "https://be13a6bfb72b1843b287a4c59c4f4174.cdn.bubble.io/f1749070664202x663207571008088400/8624f5b1-c5a3-438a-bbfa-4c1deda79052.jpg";
 
@@ -42,7 +42,7 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col items-center w-full gap-8">
-      <div className="w-full max-w-3xl text-start rounded-lg bg-card p-6 sm:p-8 shadow-xl">
+      <div className="w-full max-w-3xl text-left rounded-lg bg-card p-6 sm:p-8 shadow-xl">
         <div className="flex flex-col items-center mb-6">
           <Image
             src={supervisorImage}
@@ -55,18 +55,18 @@ export default async function HomePage() {
           />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-3 font-headline text-center">{appTitle}</h1>
-        <p className="text-md sm:text-lg text-foreground/90 leading-7 mb-6 px-2 font-body whitespace-pre-line font-semibold">
-          {arabicIntro}
+        <p className="text-md sm:text-lg text-foreground/90 leading-7 mb-6 px-2 font-body whitespace-pre-line font-semibold text-left">
+          {introText}
         </p>
-        <div className="text-sm sm:text-md text-foreground space-y-1 font-semibold">
+        <div className="text-sm sm:text-md text-foreground space-y-1 font-semibold text-left">
           <p className="font-headline font-semibold">
-            تحت إشراف: {supervisorName}
+            Supervised by: {supervisorName}
           </p>
           <p className="font-body font-semibold">
             {supervisorTitle}
           </p>
           <p className="mt-1 font-body font-semibold">
-            للتواصل: <a href={`tel:${contactNumber}`} className="text-primary hover:underline dir-ltr inline-block">{contactNumber}</a>
+            Contact: <a href={`tel:${contactNumber}`} className="text-primary hover:underline inline-block">{contactNumber}</a>
           </p>
         </div>
       </div>
