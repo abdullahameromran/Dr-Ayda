@@ -29,15 +29,15 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-start p-4 sm:p-8 bg-background">
+    <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 bg-background">
       <div className="w-full max-w-3xl text-center mb-8 rounded-lg bg-card p-6 shadow-md">
-        <Image 
-          src={supervisorImage} 
-          alt="Portrait of Dr. Aida Abd El Razek" 
-          width={120} 
-          height={120} 
+        <Image
+          src={supervisorImage}
+          alt="Portrait of Dr. Aida Abd El Razek"
+          width={120}
+          height={120}
           className="rounded-full mx-auto mb-4 shadow-lg"
-          data-ai-hint="portrait woman" 
+          data-ai-hint="portrait woman"
           priority
         />
         <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-3 font-headline">{appTitle}</h1>
