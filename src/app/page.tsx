@@ -29,24 +29,24 @@ export default async function HomePage() {
 
   if (!questionsForQuiz || questionsForQuiz.length === 0) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-background">
-        <div className="text-center">
+      <div className="flex flex-col items-center w-full space-y-8">
+        <div className="text-center bg-card p-6 rounded-lg shadow-lg">
           <h1 className="text-2xl font-bold mb-4">{appTitle}</h1>
           <p className="text-lg text-muted-foreground">
             No questions are currently available. Please check back later.
           </p>
         </div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-start p-4 sm:p-8 bg-background">
-      <div className="w-full max-w-3xl text-start mb-8 rounded-lg bg-card p-6 sm:p-8 shadow-xl">
+    <div className="flex flex-col items-center w-full gap-8">
+      <div className="w-full max-w-3xl text-start rounded-lg bg-card p-6 sm:p-8 shadow-xl">
         <div className="flex flex-col items-center mb-6">
           <Image
             src={supervisorImage}
-            alt="Portrait of Dr. Aida Abd El Razek, supervisor"
+            alt="Portrait of Dr. Aida Abd El Razek, supervisor of the Maternal and Newborn Health Nursing Review application"
             width={120}
             height={120}
             className="rounded-full shadow-lg animate-subtle-breathing"
@@ -71,6 +71,6 @@ export default async function HomePage() {
         </div>
       </div>
       <QuizClient questions={questionsForQuiz} />
-    </main>
+    </div>
   );
 }
