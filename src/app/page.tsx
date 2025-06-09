@@ -1,11 +1,23 @@
 
 import QuizClient from '@/components/quiz/QuizClient';
-import { questions as staticQuestions } from '@/data/questions';
+import { questions as allQuestions } from '@/data/questions';
 import type { QuizQuestion } from '@/types';
 import Image from 'next/image';
 
+// Fisher-Yates Shuffle function
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default async function HomePage() {
-  const questions: QuizQuestion[] = staticQuestions;
+  const shuffledQuestions = shuffleArray(allQuestions);
+  // Ensure we only take up to 20 questions, or fewer if the total is less than 20.
+  const questionsForQuiz: QuizQuestion[] = shuffledQuestions.slice(0, Math.min(20, shuffledQuestions.length));
 
   const appTitle = "Comprehensive Review in Maternal And Newborn Health Nursing";
   const arabicIntro = "يهدف هذا التطبيق لتقديم معلومات ودعم في كل ما يخص صحة المرأة، بما في ذلك الحمل والولادة، العناية بعد الولادة، تنظيم الأسرة، وغيرها من المواضيع الهامة. صحتكِ هي أولويتنا.";
@@ -15,7 +27,7 @@ export default async function HomePage() {
   const supervisorImage = "https://be13a6bfb72b1843b287a4c59c4f4174.cdn.bubble.io/f1749070664202x663207571008088400/8624f5b1-c5a3-438a-bbfa-4c1deda79052.jpg";
 
 
-  if (!questions || questions.length === 0) {
+  if (!questionsForQuiz || questionsForQuiz.length === 0) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-background">
         <div className="text-center">
@@ -44,19 +56,21 @@ export default async function HomePage() {
         <p className="text-md sm:text-lg text-foreground/90 leading-relaxed mb-6 px-2 font-body">
           {arabicIntro}
         </p>
-        <div className="text-sm sm:text-md text-foreground space-y-1">
-          <p className="font-semibold font-headline">
+        <div className="text-sm sm:text-md text-foreground space-y-1 font-semibold">
+          <p className="font-headline">
             تحت إشراف: {supervisorName}
           </p>
-          <p className="font-semibold font-body">
+          <p className="font-body">
             {supervisorTitle}
           </p>
-          <p className="mt-1 font-semibold font-body">
+          <p className="mt-1 font-body">
             للتواصل: <a href={`tel:${contactNumber}`} className="text-primary hover:underline dir-ltr inline-block">{contactNumber}</a>
           </p>
         </div>
       </div>
-      <QuizClient questions={questions} />
+      <QuizClient questions={questionsForQuiz} />
     </main>
   );
 }
+
+    
